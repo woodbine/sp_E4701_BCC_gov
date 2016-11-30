@@ -84,7 +84,7 @@ def convert_mth_strings ( mth_string ):
 #### VARIABLES 1.0
 
 entity_id = "E4701_BCC_gov"
-url = "http://www.bradford.gov.uk/bmdc/government_politics_and_public_administration/council_budgets_and_spending/expenditure_greater_than_500.htm"
+url = "https://www.bradford.gov.uk/open-data/our-datasets/expenditure-greater-than-500-in-value/"
 errors = 0
 data = []
 
@@ -95,7 +95,7 @@ soup = BeautifulSoup(html, 'lxml')
 
 #### SCRAPE DATA
 
-block = soup.find('div', attrs = {'class':'linkList'})
+block = soup.find('div', attrs = {'class':'contentCol'})
 links = block.findAll('a', href=True)
 for link in links:
     csvfile = link.text.strip()
